@@ -1,0 +1,21 @@
+<h1>Europe</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Explore Categories</li>
+    </ol>
+  </nav>
+  
+<div class="row row-cols-2 row-cols-lg-6 py-4 g-2 g-lg-3" id="latest">
+    <% if(disEurope != " " ){ %>
+        <%disEurope.forEach(function(disEurope,index){%>
+            <a href="/Continent/<%=disEurope.name %>" class="col text-center latest__link">
+                <div class="latest__img shadow">
+                    <img src="/image/<%-disEurope.img  %>" alt="">
+                </div>
+                <div><%-disEurope.name %></div>
+            </a>  
+    <% }) %>
+    <% } %>
+</div>

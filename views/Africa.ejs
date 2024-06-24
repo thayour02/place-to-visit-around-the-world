@@ -1,0 +1,24 @@
+<h1>Africa</h1>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Explore Categories</li>
+    </ol>
+  </nav>
+
+
+
+<div class="row row-cols-2 row-cols-lg-6 py-4 g-2 g-lg-3" id="latest">
+    <% if(disAfrica != ""){ %>
+        <%disAfrica.forEach(function(disAfrica,index){%>
+            <a href="/Continent/<%=disAfrica._id %>" class="col text-center latest__link">
+                <div class="latest__img shadow">
+                    <img src="/image/<%-disAfrica.img  %>" alt="">
+                </div>
+                <div class="pt-1"><%-disAfrica.name %></div>
+            </a>  
+    <% }) %>
+  <% } %>
+  </div>
+
+  

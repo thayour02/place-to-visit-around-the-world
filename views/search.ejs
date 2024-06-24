@@ -1,0 +1,16 @@
+<h1 class="pb-4">Search Result</h1>
+
+<div class="row row-cols-2 row-cols-lg-6 py-4 g-2 g-lg-3" id="latest">
+    <% if(typeof sea !== "undefined" && sea.length > 0){ %>
+        <%sea.forEach(function(sea,index){%>
+            <a href="/Continent/<%=sea._id %>" class="col text-center latest__link">
+                <div class="latest__img shadow">
+                    <img src="/image/<%-sea.img  %>" alt="">
+                </div>
+                <div><%-sea.name%></div>
+            </a>  
+    <% }) %>
+    <% } else{%>
+            <p>not found</p>
+    <% }%>
+</div>   

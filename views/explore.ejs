@@ -1,0 +1,14 @@
+<h1 class="pb-4">Explore</h1>
+
+<div class="row row-cols-2 row-cols-lg-6 py-4 g-2 g-lg-3" id="latest">
+    <% if(typeof explore !== "undefined" && explore.length > 0){ %>
+        <%explore.forEach(function(explore,index){%>
+            <a href="/Continent/<%=explore._id %>" class="col text-center latest__link">
+                <div class="latest__img shadow">
+                    <img src="/image/<%-explore.img  %>" alt="">
+                </div>
+                <div><%-explore.name%></div>
+            </a>  
+    <% }) %>
+    <% }%>
+</div>   

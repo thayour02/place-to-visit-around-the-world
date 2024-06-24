@@ -1,0 +1,90 @@
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold" style="font-weight: bold;">Submit Your Recipe</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">Share your amazing photos and experience about a great place you visit with us</p>
+    </div>
+</div>
+
+
+<div class="row justify-content-center">
+    <% if(typeof error_msg != "undefined"){%>
+        <% error_msg.forEach(function (error_msg) {%>
+            <div class="alert alert-danger" role="alert">
+                <%-error_msg %>
+              </div>
+       <% }); %>
+          <%} %>
+
+          <% if(typeof success_msg != "" ){%>
+        <% success_msg.forEach(function (success_msg) {%>
+              <div class="alert alert-success" role="alert">
+                <%- success_msg %>
+              </div>
+       <% }); %>
+
+            <%} %>
+    <div class="col-8">
+        <form action="/submitPost" enctype="multipart/form-data" method="POST">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="email" class="form-label" style="font-weight: bold;">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="name" class="form-label" style="font-weight: bold;">Name</label>
+                    <input type="require" id="name" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="text" class="form-label" style="font-weight: bold;">Description</label>
+                    <textarea name="description" id="Description" class="form-control"  cols="30" rows="5"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label for="text" class="form-label" style="font-weight: bold;">History</label>
+                    <textarea name="history" id="history" class="form-control"  cols="30" rows="5"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label for="text" class="form-label" style="font-weight: bold;">Add Images</label>
+                    <p>Example: <img style="width: 100px; height: 50px; border-radius: 5px;" src="/image/eif1.jpeg" alt="paris"> </p>
+                    <div class="imglist">
+                    <div class="addimg mb-1">
+                    <input type="file" class="form-control" name="image" accept="img/">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button style="font-weight: bold;" type="button" class="btn btn-outline-primary" id="addimage">Add image</button>
+                </div>
+
+
+<br>
+                <div class="col-12">
+                    <label for="category"style="font-weight: bold;" >Select Category</label>
+                    <select type="text" name="category" id="category" class="form-control form-select">
+                        <option selected> select categories</option>
+                        <option value="American">American</option>
+                        <option value="African">Africa</option>
+                        <option value="Asain">Asain</option>
+                        <option value="Oceania">Oceania</option>
+                        <option value="Europe">Europe</option>
+
+                    </select>
+                </div>
+<br>
+                <div class="col-12">
+                    <label for="image" style="font-weight: bold;">Display Image</label>
+                    <input type="file" class="form-control" name="image" accept="img/">
+                </div>
+ <br>               
+                <div>
+                        <a href="/sumbitPost">
+                            <button type="POST" name="Submit" class="btn btn-primary">Submit</button>
+                        </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

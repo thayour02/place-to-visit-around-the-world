@@ -1,0 +1,46 @@
+<% if(details != null ){%>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Explore Categories</li>
+        </ol>
+      </nav>
+
+
+<div class="row" style="background-color: aliceblue; border-radius: 20px;">
+    <div class="col-md-4" id="img">
+        <img style="height: 500px; margin-top: 10px; border-radius: 30px;" src="/image/<%-details.img  %>" alt="<%- details.name  %>" loading="lazy" class="img-fluid">
+    </div>
+    <div class="col-12 col-md-4" style="margin-left: 100px; float: left; width: 500px;">
+        <div class="row">
+            <div class="col-12" style="float:left;">
+                     <h1><%- details.name  %></h1> 
+            </div>
+            <div class="col-12 mb-4" class="bi-bi-tag">
+                <i><%-details.category  %></i>
+            </div>   
+           
+            <div class="col-12" style="font-family: monospace;">
+                <h4>History:</h4>
+                <%-details.history %>
+            </div>
+        </div>
+    
+    </div>
+    <div class="col-12" style="font-family:'Courier New', Courier, monospace;">
+        <h4>Description:</h4>
+        <%-details.description %>
+    </div>
+
+    <div class="col-12">
+        <h1>Images:</h1>
+        <% details.image.forEach(function(image, index){%>
+            <img style="width: 300px; height: 300px;"  src="/image/<%- image %>" alt="">
+       <% })%>
+    </div>
+</div>
+
+
+
+    
+<%} %>
